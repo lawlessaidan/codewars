@@ -1,0 +1,19 @@
+#Implement a function, which takes a non-negative integer, representing the number of eggs to boil. 
+#It must return the time in minutes (integer), which it takes to have all the eggs boiled.
+
+#Rules
+#you can put at most 8 eggs into the pot at once
+#it takes 5 minutes to boil an egg
+#we assume, that the water is boiling all the time (no time to heat up)
+#for simplicity we also don't consider the time it takes to put eggs into the pot or get them out of it
+
+def cooking_time(eggs):
+    time = 5
+    if eggs % 8 == 0:
+        mins = eggs / 8 * 5
+    elif 0 < eggs < 8:
+        mins = 5
+    else:
+        mins = (eggs // 8) * 5 + 5
+
+    return mins
